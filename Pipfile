@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+uvicorn = "*"
+fastapi = "*"
+langserve = "*"
+sse-starlette = "*"
+ollama = "*"
+pillow = "*"
+ipython = "*"
+llama-index = "*"
+llama-index-llms-ollama = "*"
+llama-index-embeddings-huggingface = "*"
+chromadb = "*"
+llama-index-vector-stores-chroma = "*"
+
+[dev-packages]
+black = "*"
+isort = "*"
+ruff = "*"
+pre-commit = "*"
+
+[requires]
+python_version = "3.11"

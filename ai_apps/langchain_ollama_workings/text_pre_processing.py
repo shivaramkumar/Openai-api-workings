@@ -1,10 +1,10 @@
 from core import get_llm, get_results, get_template_from_prompt
 
 prompt = get_template_from_prompt(
-    "Preprocess the given text by following the given steps in sequence."+
-    "Follow only those steps that have a yes against them."+
-    "Remove Number:{number},Remove punctuations : {punc} ,Word stemming : {stem}."+
-    "Output just the preprocessed text. Text : {text}"
+    "Preprocess the given text by following the given steps in sequence."
+    + "Follow only those steps that have a yes against them."
+    + "Remove Number:{number},Remove punctuations : {punc} ,Word stemming : {stem}."
+    + "Output just the preprocessed text. Text : {text}"
 )
 
 llm = get_llm(model="llama3")

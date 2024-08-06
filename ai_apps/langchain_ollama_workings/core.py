@@ -1,7 +1,6 @@
 from string import Template
 
 from langchain.prompts import PromptTemplate
-
 from langchain_ollama import OllamaLLM
 
 

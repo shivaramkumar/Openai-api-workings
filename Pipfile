@@ -24,6 +24,7 @@ evaluate = "*"
 accelerate = "*"
 pyowm = "*"
 langchain-experimental = "==0.0.46"
+langchain-ollama = "*"
 
 [dev-packages]
 black = "*"

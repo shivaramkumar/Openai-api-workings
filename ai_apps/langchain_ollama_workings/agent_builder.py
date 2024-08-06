@@ -1,13 +1,12 @@
 import os
 from typing import Type
 
+from core import get_llm
 from langchain.tools import BaseTool
-from langchain_experimental.plan_and_execute import PlanAndExecute, load_agent_executor
+from langchain_experimental.plan_and_execute import PlanAndExecute, load_agent_executor, load_chat_planner
 from pydantic import BaseModel, Field
 from pyowm.owm import OWM
 from pyowm.utils.config import get_default_config
-
-from ai_apps.langchain_ollama.core import get_llm
 
 api_key = os.environ.get("OPENAI_API_KEY")
 
@@ -50,7 +49,7 @@ class GetWeatherTool(BaseTool):
 llm = get_llm()
 tools = [GetWeatherTool()]
 model = get_llm()
-planner = get_llm()
+planner = load_chat_planner(model)
 executor = load_agent_executor(model, tools, verbose=True)
 agent = PlanAndExecute(planner=planner, executor=executor, verbose=True)
 agent.run("Do I need a jacket to go out now in Neuss ?")
